@@ -1,0 +1,30 @@
+{
+  "name": "llm-fallback-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that completes prompts with automatic provider fallback across OpenAI, Anthropic Claude, and Google Gemini. Handles rate limits, transient errors, and missing keys by trying the next provider in chain. Returns first success with full attempt log.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": { "llm-fallback-mcp": "dist/index.js" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["mcp", "model-context-protocol", "llm", "openai", "anthropic", "claude", "gemini", "fallback", "retry", "rate-limit", "claude-desktop"],
+  "author": "Khushal Bhandari <khushalbhandari25@icloud.com> (https://www.khushalbhandari.everyai.in)",
+  "license": "MIT",
+  "homepage": "https://github.com/KhushalB25/llm-fallback-mcp",
+  "repository": { "type": "git", "url": "git+https://github.com/KhushalB25/llm-fallback-mcp.git" },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}
